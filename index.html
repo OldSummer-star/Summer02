@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>孙颖莎 - 小魔王</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#0F3460',
+            secondary: '#1A3A6F',
+            accent: '#E94560',
+            light: '#F5F5F5',
+            dark: '#16213E'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+      .text-shadow-lg {
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+      }
+      .bg-blur {
+        backdrop-filter: blur(8px);
+      }
+      .masonry-grid {
+        column-count: 1;
+        column-gap: 1rem;
+      }
+      @screen md {
+        .masonry-grid {
+          column-count: 2;
+        }
+      }
+      @screen lg {
+        .masonry-grid {
+          column-count: 3;
+        }
+      }
+      .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800 overflow-x-hidden">
+  <!-- 导航栏 -->
+  <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-primary/90 bg-blur">
+    <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <img src="./微信图片_20251122132140_425_9.jpg" alt="Logo" class="w-10 h-10 rounded-full">
+        <span class="text-white font-bold text-xl">孙颖莎</span>
+      </div>
+      
+      <!-- 桌面导航 -->
+      <ul class="hidden md:flex space-x-8 text-white">
+        <li><a href="#home" class="hover:text-accent transition-colors">首页</a></li>
+        <li><a href="#records" class="hover:text-accent transition-colors">战绩档案</a></li>
+        <li><a href="#skills" class="hover:text-accent transition-colors">技术解析</a></li>
+        <li><a href="#endorsements" class="hover:text-accent transition-colors">代言活动</a></li>
+        <li><a href="#life" class="hover:text-accent transition-colors">赛场之外</a></li>
+        <li><a href="#fans" class="hover:text-accent transition-colors">莎迷基地</a></li>
+      </ul>
+      
+      <!-- 移动端菜单按钮 -->
+      <button id="menu-toggle" class="md:hidden text-white text-2xl">
+        <i class="fa fa-bars"></i>
+      </button>
+    </nav>
+    
+    <!-- 移动端导航菜单 -->
+    <div id="mobile-menu" class="md:hidden hidden bg-secondary text-white">
+      <ul class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+        <li><a href="#home" class="block py-2 hover:text-accent transition-colors">首页</a></li>
+        <li><a href="#records" class="block py-2 hover:text-accent transition-colors">战绩档案</a></li>
+        <li><a href="#skills" class="block py-2 hover:text-accent transition-colors">技术解析</a></li>
+        <li><a href="#endorsements" class="block py-2 hover:text-accent transition-colors">代言活动</a></li>
+        <li><a href="#life" class="block py-2 hover:text-accent transition-colors">赛场之外</a></li>
+        <li><a href="#fans" class="block py-2 hover:text-accent transition-colors">莎迷基地</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- 首页部分 -->
+  <section id="home" class="pt-20 bg-gradient-to-b from-primary to-secondary text-white">
+    <!-- 英雄区域 -->
+    <div class="relative h-[70vh] overflow-hidden">
+      <img src="./微信图片_20251122152232_433_9.jpg" alt="孙颖莎比赛" class="absolute inset-0 w-full h-full object-cover opacity-70">
+      <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent"></div>
+      
+      <div class="relative container mx-auto px-4 h-full flex flex-col justify-center">
+        <div class="max-w-2xl">
+          <h1 class="text-[clamp(2rem,5vw,4rem)] font-bold leading-tight text-shadow-lg mb-4">
+            一切都是最好的
+          </h1>
+          <p class="text-[clamp(1rem,2vw,1.5rem)] text-shadow mb-6">
+            相信自己，通过努力突破！
+          </p>
+          <div class="text-right text-2xl italic">—— 孙颖莎</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 个人资料 -->
+    <div class="container mx-auto px-4 py-16">
+      <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-12 text-center">SUN YINGSHA</h2>
+      <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8 shadow-xl">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="flex justify-center">
+            <div class="relative w-64 h-64 rounded-full overflow-hidden border-4 border-white/30 shadow-lg">
+              <img src="./孙颖莎蓝色正脸图.jpg" alt="孙颖莎" class="w-full h-full object-cover">
+            </div>
+          </div>
+          <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <h3 class="text-xl font-semibold mb-4 pb-2 border-b border-white/20">基本信息</h3>
+              <ul class="space-y-3">
+                <li class="flex justify-between"><span class="opacity-80">姓名：</span><span>孙颖莎</span></li>
+                <li class="flex justify-between"><span class="opacity-80">昵称：</span><span>小魔王、小豆包、人间止藤片</span></li>
+                <li class="flex justify-between"><span class="opacity-80">国籍：</span><span>中国</span></li>
+                <li class="flex justify-between"><span class="opacity-80">性别：</span><span>女</span></li>
+                <li class="flex justify-between"><span class="opacity-80">项目：</span><span>乒乓球</span></li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-4 pb-2 border-b border-white/20">详细资料</h3>
+              <ul class="space-y-3">
+                <li class="flex justify-between"><span class="opacity-80">身高：</span><span>162cm</span></li>
+                <li class="flex justify-between"><span class="opacity-80">体重：</span><span>52kg</span></li>
+                <li class="flex justify-between"><span class="opacity-80">出生日期：</span><span>2000年11月4日</span></li>
+                <li class="flex justify-between"><span class="opacity-80">出生地：</span><span>河北省石家庄市</span></li>
+                <li class="flex justify-between"><span class="opacity-80">所属队伍：</span><span>中国女子乒乓球一队</span></li>
+                <li class="flex justify-between"><span class="opacity-80">毕业院校：</span><span>上海交通大学</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 获奖历年 -->
+      <div class="mt-16">
+        <h3 class="text-[clamp(1.2rem,2vw,1.8rem)] font-bold mb-8 text-center">获奖历年</h3>
+        
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 md:p-8 shadow-xl">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2 space-y-6">
+              <div class="bg-white/5 p-4 rounded-lg hover:bg-white/10 transition-colors">
+                <h4 class="font-semibold text-accent mb-2">2025年</h4>
+                <p>世界乒乓球锦标赛女单冠军，WTT世界杯女单冠军，亚洲乒乓球锦标赛女团冠军</p>
+              </div>
+              <div class="bg-white/5 p-4 rounded-lg hover:bg-white/10 transition-colors">
+                <h4 class="font-semibold text-accent mb-2">2024年</h4>
+                <p>巴黎奥运会女单冠军、女团冠军，世界乒乓球团体锦标赛女团冠军，亚洲乒乓球锦标赛女单冠军、女团冠军</p>
+              </div>
+              
+              <div class="bg-white/5 p-4 rounded-lg hover:bg-white/10 transition-colors">
+                <h4 class="font-semibold text-accent mb-2">2023年</h4>
+                <p>世界乒乓球锦标赛女单冠军、女双冠军，亚洲乒乓球锦标赛女单冠军、女团冠军、女双冠军，WTT世界杯女单冠军</p>
+              </div>
+              
+              <div class="bg-white/5 p-4 rounded-lg hover:bg-white/10 transition-colors">
+                <h4 class="font-semibold text-accent mb-2">2022年</h4>
+                <p>世界乒乓球团体锦标赛女团冠军，成都世乒赛女团冠军，WTT世界杯女单冠军</p>
+              </div>
+              
+              <div class="bg-white/5 p-4 rounded-lg hover:bg-white/10 transition-colors">
+                <h4 class="font-semibold text-accent mb-2">2021年</h4>
+                <p>东京奥运会女团冠军、女单亚军，世界乒乓球锦标赛女双冠军，WTT世界杯女单冠军</p>
+              </div>
+              
+              <div class="bg-white/5 p-4 rounded-lg hover:bg-white/10 transition-colors">
+                <h4 class="font-semibold text-accent mb-2">2019年</h4>
+                <p>世界乒乓球锦标赛女双冠军，亚洲乒乓球锦标赛女单冠军、女团冠军，世界杯女团冠军</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center justify-center">
+              <div class="relative w-full max-w-xs">
+                <img src="./孙颖莎多哈冠军照片.jpg" alt="孙颖莎获奖" class="w-full h-auto rounded-xl shadow-lg animate-float">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 战绩档案部分 -->
+  <section id="records" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4 text-primary text-center">战绩档案</h2>
+    
+      <!-- 统计数据 -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div class="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow">
+          <div class="text-4xl font-bold text-primary mb-2">15+</div>
+          <div class="text-gray-600">国际大赛冠军</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow">
+          <div class="text-4xl font-bold text-primary mb-2">5</div>
+          <div class="text-gray-600">奥运会奖牌</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow">
+          <div class="text-4xl font-bold text-primary mb-2">100+</div>
+          <div class="text-gray-600">国际比赛胜利</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 text-center shadow-md hover:shadow-lg transition-shadow">
+          <div class="text-4xl font-bold text-primary mb-2">1</div>
+          <div class="text-gray-600">大满贯头衔</div>
+        </div>
+      </div>
+      
+      <!-- 英雄区域 -->
+      <div class="relative h-[50vh] overflow-hidden rounded-2xl mb-16">
+        <img src="./孙颖莎拼图.jpg" alt="孙颖莎比赛" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+        
+        <div class="relative container mx-auto px-4 h-full flex flex-col justify-end pb-8">
+          <div class="max-w-xl">
+            <h3 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-white text-shadow-lg mb-2">Fighting 2024</h3>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 光辉历程 -->
+      <h3 class="text-[clamp(1.2rem,2vw,1.8rem)] font-bold mb-8 text-primary text-center">光辉历程</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <!-- 历程项目 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="h-48 overflow-hidden">
+            <img src="./孙颖莎巴黎单打jpg.jpg" alt="2024巴黎奥运会" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-2">2024年8月</div>
+            <h4 class="text-xl font-bold mb-3 text-primary">巴黎奥运会</h4>
+            <p class="text-gray-600">获得女单冠军和女团冠军，实现奥运会单打金牌突破，成为中国女乒新一代领军人物。</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="h-48 overflow-hidden">
+            <img src="./孙颖莎德班世乒赛.jpg" alt="2023世乒赛" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-2">2023年5月</div>
+            <h4 class="text-xl font-bold mb-3 text-primary">世界乒乓球锦标赛</h4>
+            <p class="text-gray-600">斩获女单冠军和女双冠军，在世乒赛上实现个人突破，巩固了世界排名第一的位置。</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="h-48 overflow-hidden">
+            <img src="./孙颖莎22新乡.jpg" alt="2022世界杯" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-2">2022年10月</div>
+            <h4 class="text-xl font-bold mb-3 text-primary">WTT世界杯</h4>
+            <p class="text-gray-600">在世界杯中表现出色，击败多名强敌获得冠军，展现了稳定的竞技状态和强大的心理素质。</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="h-48 overflow-hidden">
+            <img src="./孙颖莎东京奥运会.jpg" alt="2021东京奥运会" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-2">2021年7月</div>
+            <h4 class="text-xl font-bold mb-3 text-primary">东京奥运会</h4>
+            <p class="text-gray-600">首次参加奥运会获得女团冠军和女单亚军，虽未获得单打金牌，但展现了巨大潜力。</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="h-48 overflow-hidden">
+            <img src="./孙颖莎19布达佩斯.jpg" alt="2019世乒赛" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-2">2019年4月</div>
+            <h4 class="text-xl font-bold mb-3 text-primary">世界乒乓球锦标赛</h4>
+            <p class="text-gray-600">与王曼昱搭档获得女双冠军，这是她职业生涯中的首个世乒赛冠军，开始崭露头角。</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+          <div class="h-48 overflow-hidden">
+            <img src="./孙颖莎青奥会.jpg" alt="2018青奥会" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+          </div>
+          <div class="p-6">
+            <div class="text-sm text-gray-500 mb-2">2018年10月</div>
+            <h4 class="text-xl font-bold mb-3 text-primary">青年奥林匹克运动会</h4>
+            <p class="text-gray-600">获得女单冠军和混合团体冠军，在青年赛事中展现统治力，为进入国家队一线奠定基础。</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 荣誉时刻 - Masonry布局 -->
+      <h3 class="text-[clamp(1.2rem,2vw,1.8rem)] font-bold mb-8 text-primary text-center">荣誉时刻</h3>
+      
+      <div class="masonry-grid">
+        <div class="masonry-item">
+          <img src="./孙颖莎荣誉时刻1.jpg" alt="荣誉时刻1" class="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        </div>
+        <div class="masonry-item">
+          <img src="./孙颖莎荣誉时刻2.jpg" alt="荣誉时刻2" class="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        </div>
+        <div class="masonry-item">
+          <img src="./孙颖莎荣誉时刻3.jpg" alt="荣誉时刻3" class="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        </div>
+        <div class="masonry-item">
+          <img src="./孙颖莎荣誉时刻5.jpg" alt="荣誉时刻5" class="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        </div>
+        <div class="masonry-item">
+          <img src="./孙颖莎荣誉时刻6.jpg" alt="荣誉时刻6" class="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技术解析部分 -->
+  <section id="skills" class="py-20 bg-gradient-to-b from-secondary to-primary text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4 text-center">技术解析</h2>
+      <!-- 英雄区域 -->
+      <div class="relative h-[50vh] overflow-hidden rounded-2xl mb-16">
+        <img src="./孙颖莎技术解析.jpg" alt="孙颖莎技术" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+        
+        <div class="relative container mx-auto px-4 h-full flex flex-col justify-end pb-8">
+          <div class="max-w-xl">
+            <h3 class="text-[clamp(1.2rem,2vw,1.8rem)] text-white text-shadow mb-2">坚持是聪明的事，不断地挑战自己</h3>
+            <div class="text-right italic">—— 孙颖莎</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 技术解析视频 -->
+      <h3 class="text-[clamp(1.2rem,2vw,1.8rem)] font-bold mb-8 text-center">技术解析</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <!-- 视频1 -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg group">
+          <div class="relative aspect-video overflow-hidden">
+            <video src="./孙颖莎正手.mp4"  controls alt="正手技术" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <button class="w-16 h-16 rounded-full bg-accent/90 flex items-center justify-center text-white text-2xl transform group-hover:scale-110 transition-transform">
+                <i class="fa fa-play"></i>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h4 class="text-xl font-bold mb-2">正手技术解析</h4>
+            <p class="text-gray-300">孙颖莎的正手进攻极具威胁，力量大、速度快，弧线低平，是她得分的主要手段之一。</p>
+          </div>
+        </div>
+        
+        <!-- 视频2 -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg group">
+          <div class="relative aspect-video overflow-hidden">
+            <video src="./孙颖莎反手.mp4" controls alt="反手技术" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <button class="w-16 h-16 rounded-full bg-accent/90 flex items-center justify-center text-white text-2xl transform group-hover:scale-110 transition-transform">
+                <i class="fa fa-play"></i>
+              </button>
+            </div>
+          </div>
+          <div class="p-6">
+            <h4 class="text-xl font-bold mb-2">反手技术解析</h4>
+            <p class="text-gray-300">反手技术经过多年打磨已日臻完善，拧拉质量高，相持能力强，成为她全面技术体系的重要组成部分。</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 技术特点分析 -->
+      <h3 class="text-[clamp(1.2rem,2vw,1.8rem)] font-bold mb-8 text-center">技术特点分析</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl hover:bg-white/10 transition-colors">
+          <h4 class="text-lg font-semibold mb-3 text-accent">强大的进攻能力</h4>
+          <p class="text-gray-300">孙颖莎的进攻如同暴风骤雨，正手弧圈球力量大、旋转强，反手拧拉技术精湛，能够在各种角度发起有效进攻。</p>
+        </div>
+        
+        <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl hover:bg-white/10 transition-colors">
+          <h4 class="text-lg font-semibold mb-3 text-accent">出色的反应速度</h4>
+          <p class="text-gray-300">拥有惊人的反应速度和预判能力，能够在极短时间内做出最佳应对，尤其在近台快攻中表现突出。</p>
+        </div>
+        
+        <div class="bg-white/5 backdrop-blur-sm p-6 rounded-xl hover:bg-white/10 transition-colors">
+          <h4 class="text-lg font-semibold mb-3 text-accent">全面的技术体系</h4>
+          <p class="text-gray-300">技术全面无明显短板，既能近台快攻，又能中远台相持，发球、接发球技术细腻，战术意识强。</p>
+        </div>
+      </div>
+      
+      <!-- 技术动作图片集 -->
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div class="rounded-lg overflow-hidden shadow-md group">
+          <img src="./孙颖莎技术动作1.jpg" alt="技术动作1" class="w-full h-full object-cover aspect-square group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-md group">
+          <img src="./孙颖莎技术动作2.jpg" alt="技术动作2" class="w-full h-full object-cover aspect-square group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-md group">
+          <img src="./孙颖莎技术动作3.jpg" alt="技术动作3" class="w-full h-full object-cover aspect-square group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-md group">
+          <img src="./孙颖莎技术动作4.jpg" alt="技术动作4" class="w-full h-full object-cover aspect-square group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-md group">
+          <img src="./孙颖莎技术动作5.jpg" alt="技术动作5" class="w-full h-full object-cover aspect-square group-hover:scale-110 transition-transform duration-500">
+        </div>
+        <div class="rounded-lg overflow-hidden shadow-md group">
+          <img src="./孙颖莎技术动作6.jpg" alt="技术动作6" class="w-full h-full object-cover aspect-square group-hover:scale-110 transition-transform duration-500">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 代言活动部分 -->
+  <section id="endorsements" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4 text-primary text-center">代言活动</h2>
+        
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 代言小卡片1 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎代言KFC.jpg" alt="代言1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">KFC品牌代言人</h4>
+          </div>
+        </div>
+        
+        <!-- 代言小卡片2 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎代言红旗.jpg" alt="代言2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">红旗天工家族代言人</h4>
+          </div>
+        </div>
+        
+        <!-- 代言小卡片3 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎oppo代言.jpg" alt="代言3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">OPPO代言人</h4>
+          </div>
+        </div>
+        
+        <!-- 代言小卡片4 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎代言维达.jpg" alt="代言4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">维达品牌全球代言人</h4>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 代言小卡片5 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎代言OLAY.jpg" alt="代言5" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">OLAY品牌代言人</h4>
+          </div>
+        </div>
+        
+        <!-- 代言小卡片6 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎代言半亩花田.jpg" alt="代言6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">半亩花田品牌代言人</h4>
+          </div>
+        </div>
+        
+        <!-- 代言小卡片7 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎代言欧扎克.jpg" alt="代言7" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">欧扎克品牌代言人</h4>
+          </div>
+        </div>
+        
+        <!-- 代言小卡片8 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎代言高洁露.jpg" alt="代言8" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">高洁露品牌代言人</h4>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 代言小卡片9 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎代言多芬.jpg" alt="代言9" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">联合利华身体清洁代言人</h4>
+          </div>
+        </div>
+        
+        <!-- 代言小卡片10 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎代言美禄.jpg" alt="代言10" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">雀巢品牌代言人</h4>
+          </div>
+        </div>
+        
+        <!-- 代言小卡片11 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎代言碧德然.jpg" alt="代言11" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">碧德然品牌代言人</h4>
+          </div>
+        </div>
+        
+        <!-- 代言小卡片12 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎代言全棉时代.jpg" alt="代言12" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">全棉时代全球品牌代言人</h4>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- 代言小卡片13 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎代言keep.jpg" alt="代言13" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">Keep品牌代言人</h4>
+          </div>
+        </div>
+        
+        <!-- 代言小卡片14 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎代言香飘飘.jpg" alt="代言14" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">香飘飘品牌代言人</h4>
+          </div>
+        </div>
+        
+        <!-- 代言小卡片15 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎代言脆升升.jpg" alt="代言15" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">脆升升品牌代言人</h4>
+          </div>
+        </div>
+        
+        <!-- 代言小卡片16 -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group">
+          <div class="h-68 overflow-hidden">
+            <img src="./孙颖莎代言奇巧.jpg" alt="代言16" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-primary">雀巢品牌代言人</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 赛场之外部分 -->
+  <section id="life" class="py-20 bg-gradient-to-b from-primary to-secondary text-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4 text-center">赛场之外</h2>
+      <div class="relative h-[50vh] overflow-hidden rounded-2xl mb-16">
+        <img src="./孙颖莎赛场之外.jpg" alt="赛场之外" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+        
+        <div class="relative container mx-auto px-4 h-full flex flex-col justify-end pb-8">
+          <div class="max-w-xl">
+            <h3 class="text-[clamp(1.2rem,2vw,1.8rem)] text-white text-shadow mb-2">明亮的心怀揣着善良，温暖世界</h3>
+            <div class="text-right italic">—— 孙颖莎</div>
+          </div>
+        </div>
+      </div>
+      <!-- 标签页切换 -->
+      <div class="bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden shadow-xl">
+        <!-- 标签页导航 -->
+        <div class="flex border-b border-white/20">
+          <button class="tab-btn active flex-1 py-4 px-6 text-center font-medium" data-tab="training">日常训练</button>
+          <button class="tab-btn flex-1 py-4 px-6 text-center font-medium" data-tab="study">学习生活</button>
+          <button class="tab-btn flex-1 py-4 px-6 text-center font-medium" data-tab="charity">公益活动</button>
+        </div>
+        <!-- 标签页内容 -->
+        <div class="tab-content p-6 md:p-8" id="training-content">
+          <div class="space-y-6">
+            <div class="relative rounded-lg overflow-hidden aspect-video shadow-lg">
+              <video src="./孙颖莎训练日常.mp4"  controls alt="日常训练" class="w-full h-full object-cover">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <button class="w-16 h-16 rounded-full bg-accent/90 flex items-center justify-center text-white text-2xl transform hover:scale-110 transition-transform">
+                  <i class="fa fa-play"></i>
+                </button>
+              </div>
+              <div class="absolute bottom-4 right-4 bg-black/50 text-white text-sm px-2 py-1 rounded">
+                04:08 / 08:20
+              </div>
+            </div>
+            
+            <div>
+              <p class="mb-4">孙颖莎的日常训练非常刻苦，每天训练时间超过6小时，包括技术训练、体能训练和战术演练。即使是在没有比赛的休赛期，她也保持着高强度的训练节奏。</p>
+              <p>除了常规训练外，她还会观看大量比赛录像，分析对手的技术特点和战术习惯，为每一场比赛做充分准备。这种专业态度和敬业精神，是她能够在国际赛场上持续取得好成绩的重要原因。</p>
+            </div>
+            
+            <div class="bg-white/5 p-4 rounded-lg italic border-l-4 border-accent">
+              "训练馆里的汗水，是赛场上笑容的源泉。每一次挥拍，都是为了离梦想更近一步。"
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-content p-6 md:p-8 hidden" id="study-content">
+          <div class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="relative rounded-lg overflow-hidden aspect-square shadow-lg">
+                <img src="./孙颖莎上海交大.jpg" alt="学习生活" class="w-full h-full object-cover">
+              </div>
+              <div class="flex flex-col justify-center">
+                <h4 class="text-xl font-bold mb-4">上海交通大学的求学时光</h4>
+                <p class="mb-4">作为上海交通大学的学生，孙颖莎在紧张的训练和比赛之余，也非常重视自己的学业。她主修体育管理专业，希望未来能为中国乒乓球事业的发展贡献更多力量。</p>
+                <p>尽管经常需要参加国内外比赛，但她总是会利用间隙时间学习，完成老师布置的作业。学校也为她提供了灵活的学习安排，让她能够兼顾运动员和学生的双重身份。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-content p-6 md:p-8 hidden" id="charity-content">
+          <div class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="relative rounded-lg overflow-hidden aspect-square shadow-lg">
+                <img src="./孙颖莎公益照片1.jpg" alt="公益活动1" class="w-full h-full object-cover">
+              </div>
+              <div class="relative rounded-lg overflow-hidden aspect-square shadow-lg">
+                <img src="./孙颖莎公益照片2.jpg" alt="公益活动2" class="w-full h-full object-cover">
+              </div>
+              <div class="relative rounded-lg overflow-hidden aspect-square shadow-lg">
+                <img src="./孙颖莎公益照片3.jpg" alt="公益活动3" class="w-full h-full object-cover">
+              </div>
+            </div>
+            
+            <div>
+              <h4 class="text-xl font-bold mb-4">热心公益，传递正能量</h4>
+              <p class="mb-4">孙颖莎积极参与各类公益活动，包括推广乒乓球运动进校园、为贫困地区捐赠体育器材、参与环保宣传等。她希望通过自己的影响力，带动更多人关注公益事业。</p>
+              <p>在疫情期间，她也曾多次录制视频为抗疫一线的工作人员加油鼓劲，并参与了多场线上公益活动，用实际行动践行社会责任。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 莎迷基地部分 -->
+  <section id="fans" class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4 text-primary text-center">莎迷基地</h2>
+      <!-- 粉丝区域头部 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div class="md:col-span-2 relative rounded-2xl overflow-hidden h-64 md:h-auto">
+          <img src="./孙颖莎与球迷.jpg" alt="孙颖莎与粉丝" class="w-full h-full object-cover">
+        </div>
+        <div class="relative rounded-2xl overflow-hidden h-64 md:h-auto bg-primary flex items-center justify-center">
+          <div class="text-center p-6">
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">追梦前行</h3>
+            <div class="text-white/80 italic text-right">—— 孙颖莎</div>
+          </div>
+        </div>
+      </div>
+      <!-- 粉丝留言墙 -->
+      <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-12">
+        <div class="mb-8">
+          <div class="flex items-center mb-4">
+            <img src="./孙颖莎头像1.jpg" alt="官方粉丝团" class="w-12 h-12 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold text-primary">孙颖莎官方粉丝团</h4>
+              <p class="text-sm text-gray-500">2小时前</p>
+            </div>
+          </div>
+          <p class="text-gray-700 mb-4">感谢所有莎迷的支持与陪伴，孙颖莎会继续努力，为大家带来更多精彩的比赛！让我们一起为她加油，见证更多辉煌时刻！</p>
+          <div class="flex items-center text-gray-500">
+            <button class="flex items-center mr-6 hover:text-accent transition-colors">
+              <i class="fa fa-heart-o mr-1"></i> 2,541
+            </button>
+            <button class="flex items-center hover:text-accent transition-colors">
+              <i class="fa fa-comment-o mr-1"></i> 328
+            </button>
+          </div>
+        </div>
+        
+        <!-- 粉丝祝福墙 -->
+        <div class="relative bg-red-50 rounded-2xl p-8 mb-8 overflow-hidden">
+          <div class="absolute top-0 left-0 w-full h-full opacity-10">
+            <div class="absolute top-0 left-1/4 text-9xl text-red-500 font-bold transform -translate-y-1/2">★</div>
+            <div class="absolute bottom-0 right-1/4 text-9xl text-red-500 font-bold transform translate-y-1/2">★</div>
+          </div>
+          
+          <h4 class="text-xl font-bold text-center mb-6 text-primary relative z-10">粉丝祝福墙</h4>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+              <p class="italic text-gray-700">"莎莎，每次看你的比赛都让人热血沸腾！你的拼搏精神激励着我们每一个人，永远支持你！"</p>
+              <div class="mt-3 text-right text-sm text-gray-500">—— 莎迷123</div>
+            </div>
+            
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+              <p class="italic text-gray-700">"从青奥会就开始关注你，看着你一步步成长为世界冠军，为你感到骄傲！继续加油，小魔王！"</p>
+              <div class="mt-3 text-right text-sm text-gray-500">—— 乒乓球爱好者</div>
+            </div>
+            
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+              <p class="italic text-gray-700">"喜欢你赛场上的霸气和赛场下的可爱，你的笑容特别有感染力，希望你永远开心，再创佳绩！"</p>
+              <div class="mt-3 text-right text-sm text-gray-500">—— 阳光粉丝</div>
+            </div>
+            
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+              <p class="italic text-gray-700">"每一次的胜利都来之不易，背后是无数汗水的付出。相信你会越来越强，成为乒坛传奇！"</p>
+              <div class="mt-3 text-right text-sm text-gray-500">—— 永远的支持者</div>
+            </div>
+          </div>
+          
+          <div class="absolute bottom-4 right-4 w-20 h-20">
+            <img src="https://picsum.photos/id/1113/100/100" alt="卡通形象" class="w-full h-full object-cover rounded-full">
+          </div>
+        </div>
+        
+        <!-- 粉丝评论区 -->
+        <div>
+          <h4 class="text-xl font-bold mb-6 text-primary">粉丝评论区</h4>
+          
+          <div class="space-y-6">
+            <!-- 评论1 -->
+            <div class="flex gap-4">
+              <img src="./孙颖莎头像2.jpg" alt="粉丝1" class="w-10 h-10 rounded-full flex-shrink-0">
+              <div class="flex-1">
+                <div class="bg-gray-100 p-4 rounded-lg rounded-tl-none">
+                  <div class="flex justify-between items-center mb-2">
+                    <h5 class="font-bold text-primary">乒乓球小将</h5>
+                    <span class="text-xs text-gray-500">昨天 18:30</span>
+                  </div>
+                  <p class="text-gray-700">巴黎奥运会的表现太精彩了！尤其是决赛那场，落后时的冷静让人佩服，当之无愧的冠军！</p>
+                </div>
+                <div class="flex items-center mt-2 ml-4 text-sm text-gray-500">
+                  <button class="flex items-center mr-6 hover:text-accent transition-colors">
+                    <i class="fa fa-heart-o mr-1"></i> 156
+                  </button>
+                  <button class="flex items-center hover:text-accent transition-colors">
+                    <i class="fa fa-reply mr-1"></i> 回复
+                  </button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 评论2 -->
+            <div class="flex gap-4">
+              <img src="./孙颖莎头像3.jpg" alt="粉丝2" class="w-10 h-10 rounded-full flex-shrink-0">
+              <div class="flex-1">
+                <div class="bg-gray-100 p-4 rounded-lg rounded-tl-none">
+                  <div class="flex justify-between items-center mb-2">
+                    <h5 class="font-bold text-primary">莎迷一枚</h5>
+                    <span class="text-xs text-gray-500">2天前</span>
+                  </div>
+                  <p class="text-gray-700">看了技术解析的视频，才知道莎莎的反手进步这么大，果然是付出了很多努力，期待下一场比赛！</p>
+                </div>
+                <div class="flex items-center mt-2 ml-4 text-sm text-gray-500">
+                  <button class="flex items-center mr-6 hover:text-accent transition-colors">
+                    <i class="fa fa-heart-o mr-1"></i> 98
+                  </button>
+                  <button class="flex items-center hover:text-accent transition-colors">
+                    <i class="fa fa-reply mr-1"></i> 回复
+                  </button>
+                </div>
+                
+                <!-- 回复 -->
+                <div class="flex gap-4 mt-4 ml-8">
+                  <img src="./孙颖莎头像4.jpg" alt="粉丝3" class="w-8 h-8 rounded-full flex-shrink-0">
+                  <div class="flex-1">
+                    <div class="bg-gray-100 p-3 rounded-lg rounded-tl-none text-sm">
+                      <div class="flex justify-between items-center mb-1">
+                        <h5 class="font-bold text-primary">乒乓球爱好者</h5>
+                        <span class="text-xs text-gray-500">2天前</span>
+                      </div>
+                      <p class="text-gray-700">是的，她的反手技术越来越全面了，现在几乎没有明显短板了</p>
+                    </div>
+                    <div class="flex items-center mt-1 ml-4 text-xs text-gray-500">
+                      <button class="flex items-center mr-6 hover:text-accent transition-colors">
+                        <i class="fa fa-heart-o mr-1"></i> 32
+                      </button>
+                      <button class="flex items-center hover:text-accent transition-colors">
+                        <i class="fa fa-reply mr-1"></i> 回复
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- 评论3 -->
+            <div class="flex gap-4">
+              <img src="./孙颖莎头像5.jpg" alt="粉丝4" class="w-10 h-10 rounded-full flex-shrink-0">
+              <div class="flex-1">
+                <div class="bg-gray-100 p-4 rounded-lg rounded-tl-none">
+                  <div class="flex justify-between items-center mb-2">
+                    <h5 class="font-bold text-primary">阳光总在风雨后</h5>
+                    <span class="text-xs text-gray-500">3天前</span>
+                  </div>
+                  <p class="text-gray-700">看了赛场之外的日常训练视频，真的太辛苦了，为了梦想付出这么多，值得我们所有人学习！</p>
+                </div>
+                <div class="flex items-center mt-2 ml-4 text-sm text-gray-500">
+                  <button class="flex items-center mr-6 hover:text-accent transition-colors">
+                    <i class="fa fa-heart-o mr-1"></i> 215
+                  </button>
+                  <button class="flex items-center hover:text-accent transition-colors">
+                    <i class="fa fa-reply mr-1"></i> 回复
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- 发表评论 -->
+          <div class="mt-8">
+            <h4 class="font-bold text-primary mb-4">发表评论</h4>
+            <div class="flex gap-4">
+              <img src="./微信图片_20251122132140_425_9.jpg" alt="你的头像" class="w-10 h-10 rounded-full flex-shrink-0">
+              <div class="flex-1">
+                <textarea class="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none" rows="3" placeholder="分享你的想法..."></textarea>
+                <div class="flex justify-end mt-3">
+                  <button class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition-colors">发布评论</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="bg-primary text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+        <div class="flex items-center mb-6 md:mb-0">
+          <img src="./孙颖莎多哈冠军照片.jpg" alt="Logo" class="w-12 h-12 rounded-full mr-4">
+          <div>
+            <h3 class="text-xl font-bold">孙颖莎</h3>
+            <p class="text-gray-300 text-sm">中国女子乒乓球队运动员</p>
+          </div>
+        </div>
+        
+        <div class="flex space-x-6">
+          <a href="#" class="text-white hover:text-accent transition-colors text-xl">
+            <i class="fa fa-weibo"></i>
+          </a>
+          <a href="#" class="text-white hover:text-accent transition-colors text-xl">
+            <i class="fa fa-wechat"></i>
+          </a>
+          <a href="#" class="text-white hover:text-accent transition-colors text-xl">
+            <i class="fa fa-instagram"></i>
+          </a>
+          <a href="#" class="text-white hover:text-accent transition-colors text-xl">
+            <i class="fa fa-youtube-play"></i>
+          </a>
+        </div>
+      </div>
+      
+      <div class="border-t border-white/20 pt-8 text-center text-gray-400 text-sm">
+        <p>© 2024 孙颖莎主题网站 | 本网站仅作粉丝交流使用，非官方网站</p>
+        <p class="mt-2">小红书号: 1059590636</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 返回顶部按钮 -->
+  <button id="back-to-top" class="fixed bottom-8 right-8 bg-accent text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-accent/90">
+    <i class="fa fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // 导航栏滚动效果
+    const navbar = document.getElementById('navbar');
+    const backToTop = document.getElementById('back-to-top');
+    
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 100) {
+        navbar.classList.add('py-2', 'shadow-md');
+        navbar.classList.remove('py-3');
+        
+        backToTop.classList.remove('opacity-0', 'invisible');
+        backToTop.classList.add('opacity-100', 'visible');
+      } else {
+        navbar.classList.add('py-3');
+        navbar.classList.remove('py-2', 'shadow-md');
+        
+        backToTop.classList.add('opacity-0', 'invisible');
+        backToTop.classList.remove('opacity-100', 'visible');
+      }
+    });
+    
+    // 移动端菜单切换
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle.addEventListener('click', function() {
+      mobileMenu.classList.toggle('hidden');
+      const icon = menuToggle.querySelector('i');
+      if (icon.classList.contains('fa-bars')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+    
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        // 关闭移动菜单（如果打开）
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          const icon = menuToggle.querySelector('i');
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // 返回顶部
+    backToTop.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    // 标签页切换
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        // 移除所有活动状态
+        tabBtns.forEach(b => {
+          b.classList.remove('active', 'bg-white/20', 'text-accent');
+          b.classList.add('text-white/80');
+        });
+        
+        // 添加当前活动状态
+        this.classList.add('active', 'bg-white/20', 'text-accent');
+        this.classList.remove('text-white/80');
+        
+        // 隐藏所有内容
+        tabContents.forEach(content => {
+          content.classList.add('hidden');
+        });
+        
+        // 显示当前内容
+        const tabId = this.getAttribute('data-tab');
+        document.getElementById(`${tabId}-content`).classList.remove('hidden');
+      });
+    });
+    
+    // 初始化第一个标签页
+    tabBtns[0].classList.add('active', 'bg-white/20', 'text-accent');
+    tabBtns[0].classList.remove('text-white/80');
+  </script>
+</body>
+</html>
